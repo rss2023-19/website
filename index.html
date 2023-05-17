@@ -205,6 +205,37 @@
 	  width: auto;
 	  height: auto;
 	}
+	.row {
+	  display: flex;
+	  flex-wrap: wrap;
+	  justify-content: center;
+	}
+
+	.column {
+	  flex: 0 0 calc(33.33% - 20px);
+	  text-align: center;
+	  margin-bottom: 20px;
+	  padding: 0 10px;
+	}
+
+	.circle-avatar-container {
+	  width: 100px; /* Adjust the size as desired */
+	  height: 100px; /* Adjust the size as desired */
+	  border-radius: 50%;
+	  overflow: hidden;
+	  position: relative;
+	}
+
+	.circle-avatar {
+	  width: 100px; /* Adjust the size as desired */
+	  height: 100px; /* Adjust the size as desired */
+	  border-radius: 50%;
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+
+
 	</style>
 
 
@@ -231,6 +262,13 @@
 		}, 500);
 	  }
 	};
+	  document.addEventListener('DOMContentLoaded', function() {
+    var avatars = document.getElementsByClassName('circle-avatar');
+    for (var i = 0; i < avatars.length; i++) {
+      var imgSrc = avatars[i].getAttribute('data-src');
+      avatars[i].style.backgroundImage = 'url(' + imgSrc + ')';
+    }
+  });
 </script>
 	<head>
 		<title>RSS Team 19</title>
@@ -247,6 +285,7 @@
 					<h1><strong>We are Team 19</strong>, also known as the <strong>MAJORS</strong>.</h1>
 					This website contains our work for MIT 6.4200 [6.141] Robotics: Science and Systems, Spring 2023.</h1>
 				</div>
+
 			</header>
 
 		<!-- Main -->
@@ -256,43 +295,68 @@
 
 					<section id="one">
 						<header class="major">
-							<h2>Our Team<br /></h2>
+							<h2>Our Team <br /></h2>
 						</header>
 						<div class="row">
 							<div class="column">
-								<a href="#" class="image avatar"><img src="images/alan.png" alt="" /></a>
-								<h3>Michael Wong</h3>
-								<p>alanyu@mit.edu</p>
+							  <a class="image avatar">
+								<div class="circle-avatar" data-src="images/fulls/05.jpg"></div>
+							  </a>
+							  <h3>Michael Wong</h3>
+							  <p>mwong21@mit.edu</p>
 							</div>
-							<div class="column">
-								<a href="#" class="image avatar"><img src="images/alan.png" alt="" /></a>
-								<h3><a href="https://alany1.github.io/">Alan Yu</a></h3>
-								<p>alanyu@mit.edu</p>
+
+						<div class="column">
+						  <a class="image avatar">
+							<div class="circle-avatar-container">
+							  <img class="circle-avatar" src="images/alan.png" alt="" />
 							</div>
-							<div class="column">
-								<a href="#" class="image avatar"><img src="images/alan.png" alt="" /></a>
-								<h3>Josh Sohn</h3>
-								<p>alanyu@mit.edu</p>
-							</div>
+						  </a>
+						  <h3>Alan Yu</h3>
+						  <p>alanyu@mit.edu</p>
 						</div>
+						<div class="column">
+						  <a class="image avatar">
+							<div class="circle-avatar-container">
+							  <img class="circle-avatar" src="images/josh.jpeg" alt="" />
+							</div>
+						  </a>
+						  <h3>Josh Sohn</h3>
+						  <p>jcsohn@mit.edu</p>
+						</div>
+						</div>
+
 						<div class="row">
-							<div class="column">
-								<a href="#" class="image avatar"><img src="images/alan.png" alt="" /></a>
-								<h3>Owen Matteson</h3>
-								<p>alanyu@mit.edu</p>
+						<div class="column">
+						  <a class="image avatar">
+							<div class="circle-avatar-container">
+							  <img class="circle-avatar" src="images/owen.png" alt="" />
 							</div>
-							<div class="column">
-								<a href="#" class="image avatar"><img src="images/alan.png" alt="" /></a>
-								<h3>Ragulan Sivakumar</h3>
-								<p>alanyu@mit.edu</p>
+						  </a>
+						  <h3>Owen Matteson</h3>
+						  <p>omatt431@mit.edu</p>
+						</div>
+						<div class="column">
+						  <a class="image avatar">
+							<div class="circle-avatar-container">
+							  <img class="circle-avatar" src="images/thumbs/01.jpg" alt="" />
 							</div>
-							<div class="column">
-								<a href="#" class="image avatar"><img src="images/alan.png" alt="" /></a>
-								<h3>Shenzhe Yao</h3>
-								<p>alanyu@mit.edu</p>
+						  </a>
+						  <h3>Ragulan Sivakumar</h3>
+						  <p>rskumar@mit.edu</p>
+						</div>
+						<div class="column">
+						  <a  class="image avatar">
+							<div class="circle-avatar-container">
+							  <img class="circle-avatar" src="images/shenzhe.png" alt="" />
 							</div>
+						  </a>
+						  <h3>Shenzhe Yao</h3>
+						  <p>yaoshzh@mit.edu</p>
+						</div>
 						</div>
 					</section>
+
 
 
 
@@ -473,10 +537,31 @@
 							  <!-- Add the custom modal for the first image -->
 							  <div id="myModal7" class="custom-modal">
 								<div class="custom-modal-content">
-								  <span class="close" onclick="closeModal('myModal7')">&times;</span>
-								  <h4>The Final Challenge: One Last Ride</h4>
-								  <p>Your description goes here.</p>
-								  <a href="your-link.html">Your link text</a>
+								<span class="close" onclick="closeModal('myModal7')">&times;</span>
+								<h4>The Final Challenge: One Last Ride</h4>
+								<div class="gifs-container">
+									<figure class="gif-figure">
+									  <video class="small-video" src="images/gifs/final_1.MOV" alt="city" autoplay loop muted playsinline>
+										Your browser does not support the video tag.
+									  </video>
+									  <figcaption class="gif-caption">(1) Testing out our car on the track</figcaption>
+									</figure>
+									<figure class="gif-figure">
+									  <video class="small-video" src="images/gifs/final_2.mov" alt="city" autoplay loop muted playsinline>
+										Your browser does not support the video tag.
+									  </video>
+									  <figcaption class="gif-caption">(2) Stopping at stop signs in the city</figcaption>
+									</figure>
+								</div>
+<!--								<a href="your-link.html">Your link text</a>-->
+								  <br>
+								<div class="download-container">
+								  <figure class="download-figure">
+									<a href="labs/rss_lab6.pdf" download>
+									  <img src="labs/lab6_preview.png" alt="Download Report" class="download-image">
+										<figcaption>Download Lab Report</figcaption>
+									</a>
+								  </figure>
 								</div>
 							  </div>
 							</div>
@@ -840,8 +925,9 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 						</section>
 
 					</section>
-				-->
-
+-->				<a href="https://github.com/rss2023-19" target="_blank">
+				  <img src="images/github-mark.png" alt="GitHub Logo" style="width: 32px; height: 32px;">
+				</a>
 			</div>
 
 		<!-- Footer -->
