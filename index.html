@@ -132,16 +132,73 @@
 	  filter: blur(5px); /* Adjust the blur value to your preference */
 	  z-index: -1;
 	}
-/*	a {*/
-/*  color: #00aaff !important;*/
-/*}*/
+	.gifs-container {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  gap: 16px; /* Optional: Adjust the gap between the images */
+	}
+	figure {
+	  display: inline-flex;
+	  flex-direction: column;
+	  align-items: center;
+	  margin: 0;
+	  padding: 0;
+	}
 
-/*a:hover {*/
-/*  color: #0088cc !important;*/
-/*}*/
-/*h1, h2, h3, h4, h5, h6 {*/
-/*  color: black !important;*/
-/*}*/
+
+	.iframe-container {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  width: 100%;
+	}
+
+
+	figure {
+	  display: inline-flex;
+	  flex-direction: column;
+	  align-items: center;
+	  margin: 0;
+	  padding: 0;
+	}
+
+	.download-container {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  width: 100%;
+	}
+
+	.download-image {
+	  width: 120px; /* Adjust the width of the image */
+	  height: auto;
+	}
+
+	.download-figure {
+	  display: inline-block;
+	  text-align: center;
+	  margin: 0;
+	  padding: 0;
+	}
+
+	figcaption {
+	  margin-top: 8px; /* Adjust the space between the image and the caption */
+	  font-size: 0.9em; /* Adjust the caption font size */
+	}
+	.gif-figure {
+	  display: inline-flex;
+	  flex-direction: column;
+	  align-items: center;
+	  margin: 0;
+	  padding: 0;
+	}
+
+	.gif-caption {
+	  margin-top: 8px;
+	  font-size: 0.9em;
+	  text-align: center;
+	}
 	</style>
 
 
@@ -238,45 +295,138 @@
 					<section id="two">
 						<h2>Lab Work</h2>
 							<div class="row">
-  <article class="col-6 col-12-xsmall work-item">
-    <div class="image-container" onclick="openModal('myModal1')">
-      <img src="images/thumbs/01.jpg" alt="" class="image fit thumb" id="img1">
-      <div class="view-button">View</div>
-    </div>
-    <h3>Lab 3: Wall Following and Safety Control</h3>
-    <p>Using LiDAR data as input to a PID controller to follow walls on either side. We also implement a safety controller for use throughout the class.</p>
-  </article>
-  <!-- Add the custom modal for the first image -->
-  <div id="myModal1" class="custom-modal">
-    <div class="custom-modal-content">
-      <span class="close" onclick="closeModal('myModal1')">&times;</span>
-      <h4>Lab 3: Wall Following and Safety Control</h4>
-      <p>Your description goes here.</p>
-      <a href="your-link.html">Your link text</a>
-    </div>
-  </div>
-								<article class="col-6 col-12-xsmall work-item">
-									<a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
-									<h3>Lab 4: Cone Parking and Line Following</h3>
-									<p>We apply color segmentation on camera images to add parking and line-following capabilities to the car.</p>
-								</article>
-								<article class="col-6 col-12-xsmall work-item">
-									<a href="images/fulls/03.jpg" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="" /></a>
-									<h3>Lab 5: Localization in the Stata Basement</h3>
-									<p>We use Monte Carlo Localization to perform localization given a map of the Stata basement.</p>
-								</article>
-								<article class="col-6 col-12-xsmall work-item">
-									<a href="images/fulls/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="" /></a>
-									<h3>Lab 6: Path Planning</h3>
-									<p>Planning trajectories between two points using graph algorithms and following them with pure pursuit.</p>
-								</article>
+							  <article class="col-6 col-12-xsmall work-item">
+								<div class="image-container" onclick="openModal('myModal3')">
+								  <img src="images/thumbs/lab3.png" alt="" class="image fit thumb" id="img1">
+								  <div class="view-button">View</div>
+								</div>
+								<h3>Lab 3: Wall Following and Safety Control</h3>
+								<p>Using LiDAR data as input to a PID controller to follow walls on either side. We also implement a safety controller for use throughout the class.</p>
+							  </article>
+							  <!-- Add the custom modal for the first image -->
+							<div id="myModal3" class="custom-modal">
+							  <div class="custom-modal-content">
+								<span class="close" onclick="closeModal('myModal3')">&times;</span>
+								<h4>Lab 3: Wall Following and Safety Control</h4>
+								<div class="gifs-container">
+								  <figure class="gif-figure">
+									<img src="images/gifs/lab3_1.gif" alt="Wall Following" autoplay loop>
+									<figcaption class="gif-caption">(1) Left turn around corner</figcaption>
+								  </figure>
+								  <figure class="gif-figure">
+									<img src="images/gifs/lab3_2.gif" alt="Safety Controller" autoplay loop>
+									<figcaption class="gif-caption">(2) Safety control with dynamic obstacle</figcaption>
+								  </figure>
+								</div>
+								  <br>
+							    <div class="iframe-container">
+							    	<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQzday9UswaaQPoPcJq1gjxHt1pJgA04VlvaGzukrA3NsfHtKnPXpIqtUddvTD8jpZOy9QcYmq9dh4p/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+								</div>
+<!--								<a href="your-link.html">Your link text</a>-->
+								  <br>
+								<div class="download-container">
+								  <figure class="download-figure">
+									<a href="labs/rss_lab3_final.pdf" download>
+									  <img src="labs/lab3_preview.png" alt="Download Report" class="download-image">
+										<figcaption>Download Lab Report</figcaption>
+									</a>
+								  </figure>
+								</div>
+							  </div>
+							</div>
+
+							  <article class="col-6 col-12-xsmall work-item">
+								<div class="image-container" onclick="openModal('myModal4')">
+								  <img src="images/thumbs/lab4_v3.png" alt="" class="image fit thumb" id="img1">
+								  <div class="view-button">View</div>
+								</div>
+								<h3>Lab 4: Cone Parking and Line Following</h3>
+								<p>We apply color segmentation on camera images to add parking and line-following capabilities to the car.</p>
+							  </article>
+							  <!-- Add the custom modal for the first image -->
+							  <div id="myModal4" class="custom-modal">
+							  <div class="custom-modal-content">
+								<span class="close" onclick="closeModal('myModal4')">&times;</span>
+								<h4>Lab 4: Cone Parking and Line Following</h4>
+								<div class="gifs-container">
+								  <figure class="gif-figure">
+									<img src="images/gifs/lab3_1.gif" alt="Wall Following" autoplay loop>
+									<figcaption class="gif-caption">(1) Left turn around corner</figcaption>
+								  </figure>
+								  <figure class="gif-figure">
+									<img src="images/gifs/lab3_2.gif" alt="Safety Controller" autoplay loop>
+									<figcaption class="gif-caption">(2) Safety control with dynamic obstacle</figcaption>
+								  </figure>
+								</div>
+								  <br>
+							    <div class="iframe-container">
+							    	<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQzday9UswaaQPoPcJq1gjxHt1pJgA04VlvaGzukrA3NsfHtKnPXpIqtUddvTD8jpZOy9QcYmq9dh4p/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+								</div>
+<!--								<a href="your-link.html">Your link text</a>-->
+								  <br>
+								<div class="download-container">
+								  <figure class="download-figure">
+									<a href="labs/rss_lab3_final.pdf" download>
+									  <img src="labs/lab3_preview.png" alt="Download Report" class="download-image">
+										<figcaption>Download Lab Report</figcaption>
+									</a>
+								  </figure>
+								</div>
+							  </div>
+							</div>
+							  <article class="col-6 col-12-xsmall work-item">
+								<div class="image-container" onclick="openModal('myModal5')">
+								  <img src="images/thumbs/lab5.png" alt="" class="image fit thumb" id="img1">
+								  <div class="view-button">View</div>
+								</div>
+								<h3>Lab 5: Localization in the Stata Basement</h3>
+								<p>We use Monte Carlo Localization to perform localization given a map of the Stata basement.</p>
+							  </article>
+							  <!-- Add the custom modal for the first image -->
+							  <div id="myModal5" class="custom-modal">
+								<div class="custom-modal-content">
+								  <span class="close" onclick="closeModal('myModal5')">&times;</span>
+								  <h4>Lab 5: Localization in the Stata Basement</h4>
+								  <p>Your description goes here.</p>
+								  <a href="your-link.html">Your link text</a>
+								</div>
+							  </div>
+							  <article class="col-6 col-12-xsmall work-item">
+								<div class="image-container" onclick="openModal('myModal6')">
+								  <img src="images/thumbs/lab6.png" alt="" class="image fit thumb" id="img1">
+								  <div class="view-button">View</div>
+								</div>
+								<h3>Lab 6: Path Planning</h3>
+								<p>Planning trajectories between two points using graph algorithms and following them with pure pursuit.</p>
+							  </article>
+							  <!-- Add the custom modal for the first image -->
+							  <div id="myModal6" class="custom-modal">
+								<div class="custom-modal-content">
+								  <span class="close" onclick="closeModal('myModal6')">&times;</span>
+								  <h4>Lab 6: Path Planning</h4>
+								  <p>Your description goes here.</p>
+								  <a href="your-link.html">Your link text</a>
+								</div>
+							  </div>
 							</div>
 							<div class="row">
-								<article class="col-12 work-item">
-									<a href="images/fulls/05.jpg" class="image fit thumb"><img src="images/thumbs/05.jpg" alt="" /></a>
-									<h3>The Final Challenge: One Last Race and City Driving</h3>
-									<p>We combine color segmentation with Hough transformations to race at high speeds around the Johnson indoor track. For city driving, we employ a state machine to follow a path while obeying stop signs.</p>
-								</article>
+							  <article class="col-12-xsmall work-item">
+								<div class="image-container" onclick="openModal('myModal7')">
+								  <img src="images/thumbs/final.png" alt="" class="image fit thumb" id="img1">
+								  <div class="view-button">View</div>
+								</div>
+								<h3>The Final Challenge: One Last Ride</h3>
+								<p>We combine color segmentation with Hough transformations to race at high speeds around the Johnson indoor track. For city driving, we employ a state machine to follow a path while obeying stop signs.</p>
+							  </article>
+							  <!-- Add the custom modal for the first image -->
+							  <div id="myModal7" class="custom-modal">
+								<div class="custom-modal-content">
+								  <span class="close" onclick="closeModal('myModal7')">&times;</span>
+								  <h4>The Final Challenge: One Last Ride</h4>
+								  <p>Your description goes here.</p>
+								  <a href="your-link.html">Your link text</a>
+								</div>
+							  </div>
 							</div>
 
 <!--						<ul class="actions">-->
