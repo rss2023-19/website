@@ -199,6 +199,12 @@
 	  font-size: 0.9em;
 	  text-align: center;
 	}
+	.small-video {
+	  max-height: 200px; /* Adjust the height as desired */
+		max-width:100px
+	  width: auto;
+	  height: auto;
+	}
 	</style>
 
 
@@ -349,29 +355,26 @@
 								<span class="close" onclick="closeModal('myModal4')">&times;</span>
 								<h4>Lab 4: Cone Parking and Line Following</h4>
 								<div class="gifs-container">
-								  <figure class="gif-figure">
-									<img src="images/gifs/lab3_1.gif" alt="Wall Following" autoplay loop>
-									<figcaption class="gif-caption">(1) Left turn around corner</figcaption>
-								  </figure>
-								  <figure class="gif-figure">
-									<img src="images/gifs/lab3_2.gif" alt="Safety Controller" autoplay loop>
-									<figcaption class="gif-caption">(2) Safety control with dynamic obstacle</figcaption>
-								  </figure>
+									<figure class="gif-figure">
+									  <video class="small-video" src="images/gifs/lab4_1.mov" alt="Parking" autoplay loop muted playsinline>
+										Your browser does not support the video tag.
+									  </video>
+									  <figcaption class="gif-caption">(1) Reversing to park in front of orange cone</figcaption>
+									</figure>
+									<figure class="gif-figure">
+									  <video class="small-video" src="images/gifs/lab4_2.mov" alt="Line Following" autoplay loop muted playsinline>
+										Your browser does not support the video tag.
+									  </video>
+									  <figcaption class="gif-caption">(2) Following orange line at moderate speed</figcaption>
+									</figure>
+
 								</div>
 								  <br>
 							    <div class="iframe-container">
-							    	<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQzday9UswaaQPoPcJq1gjxHt1pJgA04VlvaGzukrA3NsfHtKnPXpIqtUddvTD8jpZOy9QcYmq9dh4p/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+							    	<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vREVU9xJXQAOqvz2JGabb_PYe0R-dZHO2GDdae_Jk3Jwycepp1EOJ6Ip3Uay5sP03CmZihU3vV0TpSp/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 								</div>
 <!--								<a href="your-link.html">Your link text</a>-->
 								  <br>
-								<div class="download-container">
-								  <figure class="download-figure">
-									<a href="labs/rss_lab3_final.pdf" download>
-									  <img src="labs/lab3_preview.png" alt="Download Report" class="download-image">
-										<figcaption>Download Lab Report</figcaption>
-									</a>
-								  </figure>
-								</div>
 							  </div>
 							</div>
 							  <article class="col-6 col-12-xsmall work-item">
@@ -385,11 +388,37 @@
 							  <!-- Add the custom modal for the first image -->
 							  <div id="myModal5" class="custom-modal">
 								<div class="custom-modal-content">
-								  <span class="close" onclick="closeModal('myModal5')">&times;</span>
-								  <h4>Lab 5: Localization in the Stata Basement</h4>
-								  <p>Your description goes here.</p>
-								  <a href="your-link.html">Your link text</a>
+								<span class="close" onclick="closeModal('myModal5')">&times;</span>
+								<h4>Lab 5: Localization in the Stata Basement</h4>
+								<div class="gifs-container">
+									<figure class="gif-figure">
+									  <video class="small-video" src="images/gifs/lab5_1.mov" alt="Real" autoplay loop muted playsinline>
+										Your browser does not support the video tag.
+									  </video>
+									  <figcaption class="gif-caption">(1) Traversing a corner</figcaption>
+									</figure>
+									<figure class="gif-figure">
+									  <video class="small-video" src="images/gifs/lab5_2.mov" alt="RViZ" autoplay loop muted playsinline>
+										Your browser does not support the video tag.
+									  </video>
+									  <figcaption class="gif-caption">(2) RViZ showing localization of car during the turn</figcaption>
+									</figure>
 								</div>
+								  <br>
+							    <div class="iframe-container">
+							    	<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQJkxdHTjc8yl2j5B5SIasEeFcZLcmjnnMsfi-NOWkSm1gP12lPfQTLHdgvwWyUh2cKN1a1QM9Jvxg_/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+								</div>
+<!--								<a href="your-link.html">Your link text</a>-->
+								  <br>
+								<div class="download-container">
+								  <figure class="download-figure">
+									<a href="labs/rss_lab5.pdf" download>
+									  <img src="labs/lab5_preview.png" alt="Download Report" class="download-image">
+										<figcaption>Download Lab Report</figcaption>
+									</a>
+								  </figure>
+								</div>
+							  </div>
 							  </div>
 							  <article class="col-6 col-12-xsmall work-item">
 								<div class="image-container" onclick="openModal('myModal6')">
@@ -402,10 +431,33 @@
 							  <!-- Add the custom modal for the first image -->
 							  <div id="myModal6" class="custom-modal">
 								<div class="custom-modal-content">
-								  <span class="close" onclick="closeModal('myModal6')">&times;</span>
-								  <h4>Lab 6: Path Planning</h4>
-								  <p>Your description goes here.</p>
-								  <a href="your-link.html">Your link text</a>
+								<span class="close" onclick="closeModal('myModal6')">&times;</span>
+								<h4>Lab 6: Path Planning</h4>
+								<div class="gifs-container">
+								  <figure class="gif-figure">
+									<img src="images/gifs/lab6_1.gif" alt="Complex path planning and following" autoplay loop>
+									<figcaption class="gif-caption">(1) Complex path planning and following</figcaption>
+								  </figure>
+									<figure class="gif-figure">
+									  <video class="small-video" src="images/gifs/lab6_2.mov" alt="RViZ" autoplay loop muted playsinline>
+										Your browser does not support the video tag.
+									  </video>
+									  <figcaption class="gif-caption">(2) Real world demonstration</figcaption>
+									</figure>
+								</div>
+								  <br>
+							    <div class="iframe-container">
+							    	<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRvuE3vM8FUNTtYAF3QvYH87FT2UONBnG25z946qS6zpN-2eccDu7VrT9qQMq1O8ECNdJkfvj3uD22p/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>    <!-- Include a PDF of your lab report here: -->
+								</div>
+<!--								<a href="your-link.html">Your link text</a>-->
+								  <br>
+								<div class="download-container">
+								  <figure class="download-figure">
+									<a href="labs/rss_lab6.pdf" download>
+									  <img src="labs/lab6_preview.png" alt="Download Report" class="download-image">
+										<figcaption>Download Lab Report</figcaption>
+									</a>
+								  </figure>
 								</div>
 							  </div>
 							</div>
