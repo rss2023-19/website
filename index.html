@@ -20,7 +20,142 @@
 	.column h3 {
 	  margin-top: 10px;
 	}
+	.column h3,
+	.column p {
+	  margin-bottom: 5px;
+	}
+	.custom-modal {
+	  display: none;
+	  position: fixed;
+	  z-index: 1000;
+	  left: 0;
+	  top: 0;
+	  width: 100%;
+	  height: 100%;
+	  overflow: auto;
+	  background-color: rgba(0, 0, 0, 0.5);
+	}
+
+	.custom-modal-content {
+	  background-color: rgba(0, 0, 0, 0.8);  /*#fefefe;*/
+	  margin: 15% auto;
+	  padding: 20px;
+	  border: 1px solid black;
+	  width: 80%;
+		border-radius: 10px;
+	}
+
+	.close {
+	  color: #aaaaaa;
+	  float: right;
+	  font-size: 28px;
+	  font-weight: bold;
+	}
+
+	.close:hover,
+	.close:focus {
+	  color: #000;
+	  text-decoration: none;
+	  cursor: pointer;
+	}
+	@keyframes fadeIn {
+	  from {
+		opacity: 0;
+	  }
+	  to {
+		opacity: 1;
+	  }
+	}
+
+	@keyframes fadeOut {
+	  from {
+		opacity: 1;
+	  }
+	  to {
+		opacity: 0;
+	  }
+	}
+
+	.custom-modal {
+	  /* Add animation properties */
+	  animation-name: fadeIn;
+	  animation-duration: 0.5s;
+	  animation-fill-mode: both;
+	}
+
+	.fade-out {
+	  /* Add animation properties */
+	  animation-name: fadeOut;
+	  animation-duration: 0.5s;
+	  animation-fill-mode: both;
+	}
+	.image-container {
+	  position: relative;
+	  overflow: hidden;
+	  cursor: pointer;
+	}
+
+	.image-container:hover img {
+	  opacity: 0.6;
+	}
+
+	.view-button {
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -80%);
+	  background-color: #444;
+	  color: #fff;
+	  padding: 5px 10px;
+	  border-radius: 5px;
+	  opacity: 0;
+	  transition: opacity 0.3s;
+	}
+
+	.image-container:hover .view-button {
+	  opacity: 1;
+	}
+	body {
+	  background-color: black !important;
+	  color: lightgray !important;
+	}
+	a {
+  color: #00aaff !important;
+}
+
+a:hover {
+  color: #0088cc !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: white !important;
+}
 	</style>
+
+
+<script>
+	function openModal(modalId) {
+	  var modal = document.getElementById(modalId);
+	  modal.style.display = "block";
+	  modal.classList.remove("fade-out");
+	}
+
+	function closeModal(modalId) {
+	  var modal = document.getElementById(modalId);
+	  modal.classList.add("fade-out");
+	  setTimeout(function() {
+		modal.style.display = "none";
+	  }, 500);
+	}
+
+	window.onclick = function(event) {
+	  if (event.target.classList.contains("custom-modal")) {
+		event.target.classList.add("fade-out");
+		setTimeout(function() {
+		  event.target.style.display = "none";
+		}, 500);
+	  }
+	};
+</script>
 	<head>
 		<title>RSS Team 19</title>
 		<meta charset="utf-8" />
@@ -51,113 +186,128 @@
 							<div class="column">
 								<a href="#" class="image avatar"><img src="images/alan.png" alt="" /></a>
 								<h3>Michael Wong</h3>
+								<p>alanyu@mit.edu</p>
 							</div>
 							<div class="column">
 								<a href="#" class="image avatar"><img src="images/alan.png" alt="" /></a>
 								<h3><a href="https://alany1.github.io/">Alan Yu</a></h3>
+								<p>alanyu@mit.edu</p>
 							</div>
 							<div class="column">
 								<a href="#" class="image avatar"><img src="images/alan.png" alt="" /></a>
 								<h3>Josh Sohn</h3>
+								<p>alanyu@mit.edu</p>
 							</div>
 						</div>
 						<div class="row">
 							<div class="column">
 								<a href="#" class="image avatar"><img src="images/alan.png" alt="" /></a>
 								<h3>Owen Matteson</h3>
+								<p>alanyu@mit.edu</p>
 							</div>
 							<div class="column">
 								<a href="#" class="image avatar"><img src="images/alan.png" alt="" /></a>
 								<h3>Ragulan Sivakumar</h3>
+								<p>alanyu@mit.edu</p>
 							</div>
 							<div class="column">
 								<a href="#" class="image avatar"><img src="images/alan.png" alt="" /></a>
 								<h3>Shenzhe Yao</h3>
+								<p>alanyu@mit.edu</p>
 							</div>
 						</div>
 					</section>
-
 
 
 
 
 				<!-- Two -->
 					<section id="two">
-						<h2>Recent Work</h2>
-						<div class="row">
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
-								<h3>Magna sed consequat tempus</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
-								<h3>Ultricies lacinia interdum</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/03.jpg" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="" /></a>
-								<h3>Tortor metus commodo</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="" /></a>
-								<h3>Quam neque phasellus</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/05.jpg" class="image fit thumb"><img src="images/thumbs/05.jpg" alt="" /></a>
-								<h3>Nunc enim commodo aliquet</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/06.jpg" class="image fit thumb"><img src="images/thumbs/06.jpg" alt="" /></a>
-								<h3>Risus ornare lacinia</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-						</div>
-						<ul class="actions">
-							<li><a href="#" class="button">Full Portfolio</a></li>
-						</ul>
+						<h2>Lab Work</h2>
+							<div class="row">
+  <article class="col-6 col-12-xsmall work-item">
+    <div class="image-container" onclick="openModal('myModal1')">
+      <img src="images/thumbs/01.jpg" alt="" class="image fit thumb" id="img1">
+      <div class="view-button">View</div>
+    </div>
+    <h3>Lab 3: Wall Following and Safety Control</h3>
+    <p>Using LiDAR data as input to a PID controller to follow walls on either side. We also implement a safety controller for use throughout the class.</p>
+  </article>
+  <!-- Add the custom modal for the first image -->
+  <div id="myModal1" class="custom-modal">
+    <div class="custom-modal-content">
+      <span class="close" onclick="closeModal('myModal1')">&times;</span>
+      <h4>Lab 3: Wall Following and Safety Control</h4>
+      <p>Your description goes here.</p>
+      <a href="your-link.html">Your link text</a>
+    </div>
+  </div>
+								<article class="col-6 col-12-xsmall work-item">
+									<a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
+									<h3>Lab 4: Cone Parking and Line Following</h3>
+									<p>We apply color segmentation on camera images to add parking and line-following capabilities to the car.</p>
+								</article>
+								<article class="col-6 col-12-xsmall work-item">
+									<a href="images/fulls/03.jpg" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="" /></a>
+									<h3>Lab 5: Localization in the Stata Basement</h3>
+									<p>We use Monte Carlo Localization to perform localization given a map of the Stata basement.</p>
+								</article>
+								<article class="col-6 col-12-xsmall work-item">
+									<a href="images/fulls/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="" /></a>
+									<h3>Lab 6: Path Planning</h3>
+									<p>Planning trajectories between two points using graph algorithms and following them with pure pursuit.</p>
+								</article>
+							</div>
+							<div class="row">
+								<article class="col-12 work-item">
+									<a href="images/fulls/05.jpg" class="image fit thumb"><img src="images/thumbs/05.jpg" alt="" /></a>
+									<h3>The Final Challenge: One Last Race and City Driving</h3>
+									<p>We combine color segmentation with Hough transformations to race at high speeds around the Johnson indoor track. For city driving, we employ a state machine to follow a path while obeying stop signs.</p>
+								</article>
+							</div>
+
+<!--						<ul class="actions">-->
+<!--							<li><a href="#" class="button">Full Portfolio</a></li>-->
+<!--						</ul>-->
 					</section>
 
-				<!-- Three -->
-					<section id="three">
-						<h2>Get In Touch</h2>
-						<p>Accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque lorem ipsum dolor.</p>
-						<div class="row">
-							<div class="col-8 col-12-small">
-								<form method="post" action="#">
-									<div class="row gtr-uniform gtr-50">
-										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-										<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-										<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
-									</div>
-								</form>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</div>
-							<div class="col-4 col-12-small">
-								<ul class="labeled-icons">
-									<li>
-										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
-										1234 Somewhere Rd.<br />
-										Nashville, TN 00000<br />
-										United States
-									</li>
-									<li>
-										<h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
-										000-000-0000
-									</li>
-									<li>
-										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
-										<a href="#">hello@untitled.tld</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</section>
+<!--				&lt;!&ndash; Three &ndash;&gt;-->
+<!--					<section id="three">-->
+<!--						<h2>Get In Touch</h2>-->
+<!--						<p>Accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque lorem ipsum dolor.</p>-->
+<!--						<div class="row">-->
+<!--							<div class="col-8 col-12-small">-->
+<!--								<form method="post" action="#">-->
+<!--									<div class="row gtr-uniform gtr-50">-->
+<!--										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>-->
+<!--										<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>-->
+<!--										<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>-->
+<!--									</div>-->
+<!--								</form>-->
+<!--								<ul class="actions">-->
+<!--									<li><input type="submit" value="Send Message" /></li>-->
+<!--								</ul>-->
+<!--							</div>-->
+<!--							<div class="col-4 col-12-small">-->
+<!--								<ul class="labeled-icons">-->
+<!--									<li>-->
+<!--										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>-->
+<!--										1234 Somewhere Rd.<br />-->
+<!--										Nashville, TN 00000<br />-->
+<!--										United States-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>-->
+<!--										000-000-0000-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>-->
+<!--										<a href="#">hello@untitled.tld</a>-->
+<!--									</li>-->
+<!--								</ul>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</section>-->
 
 				<!-- Four -->
 				<!--
